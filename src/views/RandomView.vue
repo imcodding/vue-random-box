@@ -1,17 +1,13 @@
 <template>
-  <router-view></router-view>
+  <div>랜덤</div>
 </template>
 
 <script>
 export default {
-  name: "App"
+  name: "RandomView"
 }
 </script>
 
 <script setup>
 
 </script>
-
-<style scoped>
-
-</style>

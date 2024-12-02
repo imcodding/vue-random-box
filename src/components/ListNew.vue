@@ -1,17 +1,13 @@
 <template>
-  <router-view></router-view>
+  <div>입력</div>
 </template>
 
 <script>
 export default {
-  name: "App"
+  name: "RandomNew"
 }
 </script>
 
 <script setup>
 
 </script>
-
-<style scoped>
-
-</style>

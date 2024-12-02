@@ -1,17 +1,13 @@
 <template>
-  <router-view></router-view>
+  <div>목록</div>
 </template>
 
 <script>
 export default {
-  name: "App"
+  name: "RandomList"
 }
 </script>
 
 <script setup>
 
 </script>
-
-<style scoped>
-
-</style>

@@ -1,17 +1,13 @@
 <template>
-  <router-view></router-view>
+  <div>카테고리</div>
 </template>
 
 <script>
 export default {
-  name: "App"
+  name: "ListCategory"
 }
 </script>
 
 <script setup>
 
 </script>
-
-<style scoped>
-
-</style>
