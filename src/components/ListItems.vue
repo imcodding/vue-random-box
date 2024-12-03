@@ -1,5 +1,7 @@
 <template>
-  <div>목록</div>
+  <div v-for="(item, idx) in data" :key="item.id">
+    {{ item.name }}
+  </div>
 </template>
 
 <script>
@@ -9,5 +11,13 @@ export default {
 </script>
 
 <script setup>
+
+const props = defineProps({
+  data: {
+    type: Array,
+    default: []
+  }
+})
+
 
 </script>
