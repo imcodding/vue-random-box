@@ -12,17 +12,14 @@ export default {
 <script setup>
 import ListNew from './ListNew.vue';
 import ListMain from './ListMain.vue';
-import { ref, readonly, provide } from "vue"
+import { readonly, provide, inject } from "vue"
 import { useStorage } from '/@compositions/storage';
 
-const list = ref([])
+const list = inject("initList")
 const { loadList, saveList, storage_id } = useStorage();
 
 provide("list", readonly(list))
 
-const initList = (init_list) => {
-  list.value = init_list;
-}
 const addItem = (name, type) => {
   list.value.push({
     id: storage_id.value++,
@@ -41,8 +38,6 @@ const removeItem = (id) => {
 
 provide("addItem", addItem)
 provide("removeItem", removeItem)
-
-loadList(initList)
 
 const category = [
   {label:'한식', value:'korea'},
