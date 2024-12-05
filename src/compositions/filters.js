@@ -35,6 +35,13 @@ export const useFilter = () => {
     .slice()
     .sort()
   }
+  const getListByType = (list, type) => {
+    const temp = list.value
+      .filter((item) => item.type == type)
+      .slice()
+      .sort()
+    return temp.length > 0 ? temp : getAllList(list)
+  }
 
   return {
     getAllList,
@@ -42,6 +49,7 @@ export const useFilter = () => {
     getChinaList,
     getJapanList,
     getWesternList,
-    getEtcList
+    getEtcList,
+    getListByType
   }
 }

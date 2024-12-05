@@ -2,9 +2,9 @@
   <list-category v-on:change-filter="onChangeFilter" />
   <list-items :data="filtered_list"/>
   <div class="list-main">
-    <button type="button">
-      <router-link to="/random">랜덤돌리기</router-link>
-    </button>
+    <router-link :to="{name: 'randomView', params: {type: filter}}">
+      <button type="button">랜덤돌리기</button>
+    </router-link>
   </div>
 </template>
 
@@ -48,11 +48,9 @@ const onChangeFilter = (filter_type) => {
   filter.value = filter_type
 }
 
-//TODO 추가,카테고리 클릭 구분 필요. 추가할 경우 해당 목록 그대로
 watch(
   [() => filter.value, list.value],
   ([new_filter, new_list], [old_filter, old_list]) => {
-    // console.log('new_filter',new_filter)
     const newFilter = new_filter == "" ? "all" : new_filter
     const temp_list = filters[newFilter].func(list)
     filtered_list.value = temp_list;
