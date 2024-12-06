@@ -1,8 +1,10 @@
 <template>
-  <div v-for="(item, idx) in data" :key="item.id">
-    {{ item.name }}
-    <img src="/@/assets/images/Delete.svg" width="20" height="20" 
-      @click="onRemoveItem(item.id)" />
+  <div class="list-items">
+    <div v-for="(item, idx) in data" :key="item.id">
+      <span>{{ item.name }}</span>
+      <img src="/@/assets/images/Delete.svg" width="20" height="20" 
+      @click="onRemoveItem(item)" />
+    </div>
   </div>
 </template>
 
@@ -21,9 +23,9 @@ const props = defineProps({
   }
 })
 const removeItem = inject("removeItem")
-const onRemoveItem = (id) => {
-  if(!confirm('삭제하시겠습니까?')) return;
-  removeItem(id)
+const onRemoveItem = (item) => {
+  if(!confirm(`'${item.name}' 삭제하시겠습니까?`)) return;
+  removeItem(item.id)
 }
 
 </script>
