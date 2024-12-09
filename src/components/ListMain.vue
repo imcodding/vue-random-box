@@ -2,9 +2,7 @@
   <list-category v-on:change-filter="onChangeFilter" />
   <list-items :data="filtered_list"/>
   <div class="list-main">
-    <router-link :to="{name: 'randomView', params: {type: filter}}">
-      <button type="button">랜덤돌리기</button>
-    </router-link>
+    <button type="button" @click="onRandom">랜덤돌리기</button>
   </div>
 </template>
 
@@ -20,6 +18,7 @@ import ListItems from './ListItems.vue';
 
 import { ref, inject, watch } from "vue"
 import { useFilter } from "/@compositions/filters"
+import { useRouter } from 'vue-router';
 import TYPE from "/@/enums/category"
 
 const {
@@ -46,6 +45,17 @@ const filtered_list = ref([])
 
 const onChangeFilter = (filter_type) => {
   filter.value = filter_type
+}
+const router = useRouter()
+const onRandom = () => {
+  if(filtered_list.value.length === 0) { 
+    alert('항목을 추가해주세요')
+    return
+  }
+  router.push({
+    name: 'randomView',
+    params: { type: filter.value }
+  })
 }
 
 watch(
