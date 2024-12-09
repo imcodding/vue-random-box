@@ -13,7 +13,7 @@ a {
   color: #000;
   text-decoration: inherit;
 }
-
+html { height:100vh }
 body {
   margin: 0;
   /* display: flex; */
@@ -29,12 +29,13 @@ h1 {
 }
 
 button {
-  padding: 3px 0 5px 0;
-  border-radius: 5px;
-  border:none;
+  /* padding: 3px 0 5px 0; */
+  /* border-radius: 5px; */
+  border: 1px solid #333;
   background-color: #333;
   color: #fff;
   cursor: pointer;
+  font-size: 14px;
 }
 button:hover {
   /* border-color: #646cff; */
@@ -46,16 +47,21 @@ ul { padding: 0 }
 }
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
   text-align: center;
 }
 
 /* ListNew */
+.list-new {
+  margin: 10px
+}
 .list-new select {
-  width: 60px;
-  padding: 4px;
+  box-sizing: content-box;
+  width: 55px;
+  /* padding: 4px; */
+  height: 28px;
   border-color: #b4b4b4;
   border-radius: 5px;
 }
@@ -65,21 +71,26 @@ ul { padding: 0 }
 }
 
 .list-new input {
-  width: 170px;
-  height: 23px;
+  width: 195px;
+  height: 28px;
   border: 1px solid #b4b4b4;
   border-radius: 5px;
-  margin: 0 4px
+  margin: 0 4px;
+  padding:0 4px
 }
 
 .list-new button {
-  width: 48px;
+  box-sizing: content-box;
+  width: 50px;
+  height: 26px;
+  padding: 0 0 1px 0;
+  border-radius: 5px;
 }
 
 /* ListCategory */
 .list-category li {
   display: inline-block;
-  width: 35px;
+  width: 40px;
   text-decoration: none;
   color: #000;
   background-color: #eeeeee;
@@ -93,13 +104,48 @@ ul { padding: 0 }
   /* background-color: #F7E02C; */
 }
 
-/* ListMain */
-.list-main button {
+/* ListItems */
+.list-items {
+  flex:1;
+  overflow-y: scroll;
+}
+
+.list-items div {
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+}
+.list-items img {
   position: absolute;
-  bottom: 5px;
-  left: 5px;
-  right: 5px;
+  top: 4px;
+  bottom:0;
+}
+.list-main {}
+.list-main button {
+  height: 60px;
+  width: 100%;
 }
 .list-main a {
   color: #fff
+}
+
+/* RandomView */
+.random-view-result {
+  font-size: 20px
+}
+
+.random-view-btn { 
+  position: absolute; 
+  height: 60px;
+  left: 0; 
+  bottom: 0; 
+  right: 0;
+}
+
+.random-view-box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
