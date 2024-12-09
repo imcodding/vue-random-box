@@ -1,5 +1,5 @@
 <template>
-  <list-category v-on:change-filter="onChangeFilter" />
+  <list-category v-on:change-filter="onChangeFilter" :filterType="filterd_type"/>
   <list-items :data="filtered_list"/>
   <div class="list-main">
     <button type="button" @click="onRandom">랜덤돌리기</button>
@@ -33,6 +33,10 @@ const {
 const filter = ref("")
 const list = inject("list")
 
+const filterd_type = inject("filterd_type")
+const type = filterd_type && filterd_type.length > 0 ? filterd_type : TYPE.ALL
+filter.value = type
+
 const filters = {}
 filters[TYPE.ALL] = {func:getAllList}
 filters[TYPE.KOREA] = {func:getKoreaList}
@@ -61,7 +65,7 @@ const onRandom = () => {
 watch(
   [() => filter.value, list.value],
   ([new_filter, new_list], [old_filter, old_list]) => {
-    const newFilter = new_filter == "" ? "all" : new_filter
+    const newFilter = new_filter == "" ? TYPE.ALL : new_filter
     const temp_list = filters[newFilter].func(list)
     filtered_list.value = temp_list;
   },

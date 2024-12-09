@@ -17,7 +17,8 @@ export default {
 <script setup>
 import { ref, watch, inject } from "vue"
 const emit = defineEmits(['change-filter'])
-const filter = ref("all")
+const props = defineProps({ filterType: { type: String, default: "all" }})
+const filter = ref(props.filterType)
 
 const category = inject("category");
 category.unshift({label:'전체', value:'all'})
