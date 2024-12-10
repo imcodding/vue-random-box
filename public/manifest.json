@@ -1,0 +1,88 @@
+  {
+      "name": "RandomBox",
+      "short_name": "RandomBox",
+      "start_url": "",
+      "display": "standalone",
+      "theme_color": "#F7E02C",
+      "background_color": "#fff",
+      "icons": [
+          {
+              "src": "icons/favicon-16x16.png",
+              "type": "image/png",
+              "sizes": "16x16",
+              "purpose": "any"
+          },
+          {
+              "src": "icons/favicon-32x32.png",
+              "type": "image/png",
+              "sizes": "32x32",
+              "purpose": "any"
+          },
+          {
+              "src": "icons/android-chrome-192x192.png",
+              "type": "image/png",
+              "sizes": "192x192",
+              "purpose": "any"
+          },
+          {
+              "src": "icons/android-chrome-512x512.png",
+              "type": "image/png",
+              "sizes": "512x512",
+              "purpose": "any"
+          },
+          {
+            "src": "icons/apple-touch-icon-58x58.png",
+            "type": "image/png",
+            "sizes": "58x58",
+            "purpose": "any"
+          },
+          {
+            "src": "icons/apple-touch-icon-76x76.png",
+            "type": "image/png",
+            "sizes": "76x76",
+            "purpose": "any"
+          },
+          {
+            "src": "icons/apple-touch-icon-80x80.png",
+            "type": "image/png",
+            "sizes": "80x80",
+            "purpose": "any"
+          },
+          {
+            "src": "icons/apple-touch-icon-87x87.png",
+            "type": "image/png",
+            "sizes": "87x87",
+            "purpose": "any"
+          },
+          {
+            "src": "icons/apple-touch-icon-114x114.png",
+            "type": "image/png",
+            "sizes": "114x114",
+            "purpose": "any"
+          },
+          {
+            "src": "icons/apple-touch-icon-120x120.png",
+            "type": "image/png",
+            "sizes": "120x120",
+            "purpose": "any"
+          },
+          {
+            "src": "icons/apple-touch-icon-152x152.png",
+            "type": "image/png",
+            "sizes": "152x152",
+            "purpose": "any"
+          },
+          {
+            "src": "icons/apple-touch-icon-180x180.png",
+            "type": "image/png",
+            "sizes": "180x180",
+            "purpose": "any"
+          },
+          {
+            "src": "icons/apple-touch-icon-192x192.png",
+            "type": "image/png",
+            "sizes": "192x192",
+            "purpose": "any"
+          }
+      ]
+}
